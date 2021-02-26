@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 ASAP FIX GITHUB 
->>>>>>> 83c5ad5a906bcf23293627a3e1a1056a5ad30921
 
 Create a script to generate JSON of all files.
 Format 

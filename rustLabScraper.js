@@ -9,7 +9,6 @@ const path = require('path')
 // ammo,build,clothing,components,electrical,food,fun,items,medical,misc,resources,tools,traps,weapons
 // !!! Change Item category value to one of the categories above. !!! > Then run node rustLabScraper.js 
 // This will create a directory for the item image and the databases. 
-<<<<<<< HEAD
 const itemCategories = ["weapons", "build", "items", "resources", "clothing", "tools", "medical", "food", "ammo", "traps", "misc", "components", "electrical", "fun"];
 var itemCategory;
 
@@ -20,14 +19,10 @@ for (var i = 0; i < itemCategories.length; i++) {
 
 }
 // var itemCategory = "ammo";
-=======
-var itemCategory = "ammo";
->>>>>>> 83c5ad5a906bcf23293627a3e1a1056a5ad30921
 // Create path 
 
 var filepath = path.resolve(__dirname, "assets/items/" + itemCategory + "/");
 var pathForDB = "assets/items/" + itemCategory + "/"
-<<<<<<< HEAD
 // if (!fs.existsSync(filepath)) {
 //     fs.mkdirSync(filepath);
 // }
@@ -35,15 +30,6 @@ var pathForDB = "assets/items/" + itemCategory + "/"
 
 
 function crawlPage(itemCategory) {
-=======
-if (!fs.existsSync(filepath)){
-    fs.mkdirSync(filepath);
-}
-
-crawlPage();
-
-function crawlPage() {
->>>>>>> 83c5ad5a906bcf23293627a3e1a1056a5ad30921
     (async () => {
 
         const args = [
@@ -84,17 +70,10 @@ function crawlPage() {
             const [image_El] = await page.$x('//*[@id="left-column"]/div[1]/div[2]/img');
             const imageSrc = await image_El.getProperty('src');
             const image = await imageSrc.jsonValue();
-<<<<<<< HEAD
-            // //Download Image
-            // Downloader.download(image, filepath, function(filename) {
-            //     console.log("Download complete for " + filename);
-            // });
-=======
             //Download Image
             Downloader.download(image, filepath, function(filename) {
                 console.log("Download complete for " + filename);
             });
->>>>>>> 83c5ad5a906bcf23293627a3e1a1056a5ad30921
             // Shortcode
             const shortcodeStr = "begin_" + image + "_end";
             var rmBegin = shortcodeStr.replace(/begin_https:\/\/rustlabs.com\/img\/items180\//g, "");
@@ -113,7 +92,6 @@ function crawlPage() {
             var itemIDint = parseInt(itemID);
             var imageFinal = pathForDB + shortcode + ".png";
             // console.log(stackSize, shortcode, itemIDint, imageFinal);
-<<<<<<< HEAD
             var dataItem = {
                 "itemName": itemName,
                 "itemDescription": itemDescription,
@@ -125,20 +103,6 @@ function crawlPage() {
             };
 
             database.insert(dataItem);
-=======
-
-
-            database.insert({
-                itemCategory: {
-                    "itemName": itemName,
-                    "itemDescription": itemDescription,
-                    "shortcode": shortcode,
-                    "image": imageFinal,
-                    "stackSize": stackSize,
-                    "itemID": itemIDint
-                }
-            });
->>>>>>> 83c5ad5a906bcf23293627a3e1a1056a5ad30921
             // end data log
         }
         // console.log(hrefs);
