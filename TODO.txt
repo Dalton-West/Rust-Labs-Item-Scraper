@@ -1,0 +1,21 @@
+
+Create a script to generate JSON of all files.
+Format 
+{
+	"category": {
+		"itemName": {
+			"itemName": "itemName",
+			"itemDescription": "itemDescription",
+			"shortcode": "shortcode",
+			"image": "image",
+			"stackSize": int(stackSize),
+			"itemID": int(itemID)
+		}
+	}
+}
+
+sort nedb
+
+optimize rustlabs script too loop throught all categories and run future json maker
+
+Create webapp for Raidable Bases plugin Loot & config

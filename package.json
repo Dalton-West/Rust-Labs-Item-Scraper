@@ -1,0 +1,17 @@
+{
+  "name": "rust-items-db",
+  "version": "1.0.0",
+  "description": "Fetches items from Rustlabs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "Rust Lab Scraper": "node rustLabScraper.js",
+    "urlScraper.js": "node urlScraper.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nedb": "^1.8.0",
+    "puppeteer": "^7.1.0"
+  }
+}
